@@ -1,11 +1,10 @@
 # Buyme-deploy-en-edicion
-backend===>
-https://buyme-pf.herokuapp.com/
-- <vr></vr>
-- <vr></vr>
-- - <vr></vr>
-base de datos===>
-Host: <vr></vr>
+- <vr></vr>backend===>
+- - <vr></vr>https://buyme-pf.herokuapp.com/
+
+
+- <vr></vr>base de datos===>
+- - <vr></vr>Host: <vr></vr>
 ec2-54-158-26-89.compute-1.amazonaws.com <vr></vr>
 Database: <vr></vr>
 d1u9dohfb2lipq <vr></vr>
