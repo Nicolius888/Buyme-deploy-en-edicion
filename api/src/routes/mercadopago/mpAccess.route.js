@@ -1,7 +1,9 @@
 const { Router } = require("express");
 const router = Router();
 const bodyParser = require("body-parser");
-// const { SELLER_ACCESS_TOKEN } = process.env;
+const CORS_URL = process.env.CORS_URL
+  ? process.env.CORS_URL
+  : "http://localhost:3000";
 
 //llamas a la sdk de mercadopago ya instalada
 const mercadopago = require("mercadopago");
@@ -45,9 +47,9 @@ router.post("/", async (req, res) => {
           cost: shipping,
           mode: "not_specified",
         },
-        back_urls: { // MOdificadas
-          failure: "http://localhost:3000/cart",
-          success: "http://localhost:3000/successBA", //     ANDUVO TODO OK
+       back_urls: { // MOdificadas
+          failure: `${CORS_URL}/cart`,
+          success: `${CORS_URL}/successBA`, //     ANDUVO TODO OK
         },
         auto_return: "approved",
       };
