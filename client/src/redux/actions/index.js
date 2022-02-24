@@ -7,8 +7,8 @@ import { saveToken } from "../../components/Login/controllers/tokenFunctions";
 // import { verifyTokenRole, sendKey } from "../../middlewares/verifyToken";
 import { sendKey } from "../../middlewares/verifyToken";
 
-const CORS_URL = process.env.CORS_URL
-  ? process.env.CORS_URL
+const REACT_APP_API = process.env.REACT_APP_API
+  ? process.env.REACT_APP_API
   : "http://localhost:3001";
 
 // estos son ejemplos
