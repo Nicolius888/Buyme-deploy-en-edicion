@@ -7,14 +7,14 @@ import { saveToken } from "../../components/Login/controllers/tokenFunctions";
 // import { verifyTokenRole, sendKey } from "../../middlewares/verifyToken";
 import { sendKey } from "../../middlewares/verifyToken";
 
-const REACT_APP_API = process.env.REACT_APP_API
-  ? process.env.REACT_APP_API
+const CORS_URL = process.env.CORS_URL
+  ? process.env.CORS_URL
   : "http://localhost:3001";
 
 // estos son ejemplos
 
 export const LOGIN = "LOGIN";
-export const LOG_OUT = 'LOG_OUT';
+export const LOG_OUT = "LOG_OUT";
 export const LOADING = "LOADIN";
 export const ERROR_MODAL = "ERROR_MODAL";
 export const GET_PRODUCTS_INIT = "GET_PRODUCTS_INIT";
@@ -213,9 +213,7 @@ export function getProductsByCategory(categoryId) {
       // dispatch({
       //   type: GET_PRODUCTS_INIT,
       // });
-      var json = await axios.get(
-        `${REACT_APP_API}/getcatbyid/` + categoryId
-      );
+      var json = await axios.get(`${REACT_APP_API}/getcatbyid/` + categoryId);
       return dispatch({
         type: GET_PRODUCTS_BY_CATEGORY,
         payload: json.data,
@@ -540,12 +538,12 @@ export function loginCustomer(payload) {
   };
 }
 
-export function postEmail(payload){
+export function postEmail(payload) {
   return async function (dispatch) {
-      var response = await axios.post(`${REACT_APP_API}/sendMail`, payload);
-      console.log(response);
-      return response;
-  }
+    var response = await axios.post(`${REACT_APP_API}/sendMail`, payload);
+    console.log(response);
+    return response;
+  };
 }
 
 // export function sendToMP(payload){
@@ -559,14 +557,13 @@ export function postEmail(payload){
 //     }
 //   }
 
-  
-  export function sendToMpSuccess(payload){
-    return async function (dispatch) {
-      try {
-      await axios.post(`${REACT_APP_API}/mpsuccess`,payload);
-      console.log('---------success----------->>',payload);
-      }catch(error){
-        console.log(error)
-      }
+export function sendToMpSuccess(payload) {
+  return async function (dispatch) {
+    try {
+      await axios.post(`${REACT_APP_API}/mpsuccess`, payload);
+      console.log("---------success----------->>", payload);
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
+}
