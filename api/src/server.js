@@ -6,7 +6,7 @@ const server = express();
 const cors = require("cors");
 
 
-const whiteList = ['https://buyme-app-pf.vercel.app'];
+const whiteList = ['https://buyme-deploy-en-edicion.vercel.app'];
 
 server.use(bodyParser.json({ limit: "10mb" }));
 server.use(express.json());
