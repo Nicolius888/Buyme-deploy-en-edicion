@@ -1,6 +1,6 @@
 # Buyme-deploy-en-edicion
 - <vr></vr>backend===>
-- - <vr></vr>https://buyme-pf.herokuapp.com/
+- - <vr></vr>https://buyme-deploy-en-edicion.herokuapp.com/
 
 
 - <vr></vr>base de datos===>
